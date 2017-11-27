@@ -1,13 +1,11 @@
-var fs = require('fs');
+var mymodule = require('./makeitmodular');
 
 const dirName = process.argv[2];
 const fileExt = process.argv[3];
 
-fs.readdir(dirName, (err, files) => {
+mymodule(dirName, fileExt, (err, files) => {
     if (err) throw err;
     files.filter(file => {
-       if  (file.substr(file.length - 3, file.length) == ('.' + fileExt)) {
-            console.log(file);
-       }
+       console.log(file); 
     });
 });
