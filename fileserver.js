@@ -1,5 +1,3 @@
-// "YYY-MM-DD hh:mm"
-
 const http = require('http');
 const fs = require('fs');
 let fileLoc = process.argv[3];
