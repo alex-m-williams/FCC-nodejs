@@ -1,5 +1,11 @@
-let arr = process.argv.slice(2, process.argv.length);
-console.log(arr.reduce((sum, int) => {
-    let sumAdd = Number(sum);
-    return sumAdd += Number(int); 
-}));
+var fs = require('fs');
+
+let buf = fs.readFileSync(process.argv[2]);
+let numNewLine = 0;
+buf.filter(b => {
+   if (b === 10) {
+       numNewLine++;
+   } 
+});
+
+console.log(numNewLine);
